@@ -10,7 +10,7 @@
 import random
 
 digit = [1,2,3,4,5,6,7,8,9,0]
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 
 # 产生8位随机数字密码
@@ -19,14 +19,17 @@ def password_generator(length=8, level=0):
     begin_string = []
         
     for i in range(8):
-        random_number = 10 - round(10*random.random())
+        random_number = abs(round(10*random.random()-1))
         print(random_number)
         begin_string.append(digit[random_number])
     print(begin_string) 
     new_string = ''.join(str(n) for n in begin_string)
     print(new_string)
-    
+
+
+# 产生8位随机字母密码
 	
 	
 password_generator()
-	
+
+
