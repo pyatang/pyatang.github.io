@@ -26,10 +26,13 @@ def password_generator(length=8, level=0):
     new_string = ''.join(str(n) for n in begin_string)
     print(new_string)
 
+# 增加"__main__", 成为一个可以调用的模块
 
+if __name__ == "__main__":
+    password_generator() 
+
+    
 # 产生8位随机字母密码
 	
 	
-password_generator()
-
 
