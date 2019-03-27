@@ -27,6 +27,7 @@ def password_generator(length=8, level=0):
     print(new_string)
 
 # 增加"__main__", 成为一个可以调用的模块
+# 描述错误，应该为增加 __name__ == "__main__" 后可以让该模块成为一个可执行的脚本
 
 if __name__ == "__main__":
     password_generator() 
