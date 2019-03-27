@@ -55,9 +55,9 @@ def produce_random_password(length, level=0):
     begin_string = []
     for i in range(length):
         random_number = abs(round(68*random.random()-1))
-        print(random_number)
+        ## print(random_number)
         begin_string.append(symbol_digit_alphabet[random_number])
-    print(begin_string)
+    ## print(begin_string)
     new_string = ''.join(str(n) for n in begin_string)
     
     print(new_string) 
