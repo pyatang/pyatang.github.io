@@ -85,16 +85,28 @@ class dictionary:
         print('UPDATE SUCCESSFUL')
         c.close()
         
-    def query(self, query_word = 'a'):
+    def query(self, query_word='a'):
         conn = sqlite3.connect('atang_dictionary.db')
         c = conn.cursor()
-        # result = c.execute("SELECT Chinese_definition FROM dictionary WHERE word=?", query_word)
+        sql_word = (query_word,)
+        c.execute("SELECT * FROM dictionary WHERE word=?", sql_word)
+        
         while True:
+            try:
+                retrieve_definition = (c.fetchone()[2])
+            except TypeError:
+                print('Oops! That was no valid English word. Try again...')
+                break
+
+
+        
+       
             # c.execute('SELECT * from dictionary WHERE word=?', query_word)
-            if c.fetchone() is not None:
-                print(c.fetchone())
-                print(c.fetchone()[2])
-            else:
+            if retrieve_definition is not None:
+                print('Now the word definition is {}'.format(retrieve_definition))
+                print(c.fetchone()[0])
+
+            else:    
                 print('Sorry there is no {} definition!'.format(self.word))
                 print('*'*99)
                 print('Please add the meaning of this word.')
@@ -107,9 +119,9 @@ class dictionary:
         
 if __name__ == "__main__":
     # 开始时实例对象没有传递参数
-    new_dictionary = dictionary(sys.argv[1])
+    new_dictionary = dictionary()
     
-    new_dictionary.query()
+    new_dictionary.query(sys.argv[1])
  
     
     
