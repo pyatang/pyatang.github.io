@@ -8,15 +8,46 @@
 import sys
 import sqlite3
 
+# initial dictionary with 370101 english words with id
+
+    
+
 # manipulate the dictionary which exist
 class dictionary:
     
-    def __init__(self, word):
+    def __init__(self, word=None):
         self.word = word
     
+    def init_dictionary(self):
+        conn = sqlite3.connect('atang_dictionary.db')
+        c = conn.cursor()
+
+        # Create table
+        # c.execute('''CREATE TABLE dictionary
+        #             (id, word, definition, Chinese_definition)''')
+
+        with open("words_alpha.txt") as f:
+            read_word = f.readlines()
+        
+        word_list = []
+        for i in range(len(read_word)):               # read word from text add index to each word, make a tuple then a word list, then insert to sqlite3 database
+            word_id = i+1
+            word =read_word[i].strip('\r\n')                            
+            definition = ''
+            Chinese_definition = ''
+            word_tuple = (word_id, word, definition, Chinese_definition)
+            word_list.append(word_tuple)
+        
+        
+        c.executemany('INSERT INTO dictionary(id, word, definition, Chinese_definition) VALUES (?,?,?,?)', word_list)
+        conn.commit()
+
+        c.close()
+
+
     def create(self):
         # create a dictionary for store initial word
-        conn = sqlite3.connect('atang_ditionary.db')
+        conn = sqlite3.connect('atang_dictionary.db')
         c = conn.cursor()
         # Create table
         c.execute('''CREATE TABLE dictionary
@@ -42,21 +73,27 @@ class dictionary:
         print('This is update method')
         
     def query(self):
-        conn = sqlite3.connect('atang_ditionary.db')
+        conn = sqlite3.connect('atang_dictionary.db')
         c = conn.cursor()
         query_word = (self.word,)
-        result = c.execute("SELECT * FROM dictionary WHERE word=?", query_word)
-        if c.fetchone() != None:
-                print(c.fetchone()[3])
+        result = c.execute("SELECT Chinese_definition FROM dictionary WHERE word=?", query_word)
+
+        if c.fetchone() is not None:
+            print(c.fetchone()[3])
+
         print('Sorry there is no {} definition!'.format(self.word))
         print('*'*99)
         print('Please add the meaning of this word.')
+        
         c.close()
         
         
 if __name__ == "__main__":
     # 开始时实例对象没有传递参数
     new_dictionary = dictionary(sys.argv[1])
-
-    new_dictionary.query()
+    #new_dictionary.create()
+    #new_dictionary.query()
+    new_dictionary.init_dictionary()
+    
+    
     
