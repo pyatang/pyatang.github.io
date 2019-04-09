@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: Opx;
+}
+
+body {
+    background-color: white;
+}
+
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+.table {
+    padding-top: 20px;
+}
+
+.content {
+    font: 200;
+}
