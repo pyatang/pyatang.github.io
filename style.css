@@ -4,9 +4,10 @@
 }
 
 .table {
-    margin-top: 100px;
+    margin: 20px;
 }
 
 .content {
     font: 200;
+    margin: 80px;  
 }
