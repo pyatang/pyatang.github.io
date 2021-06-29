@@ -1,0 +1,22 @@
+.header {
+    padding: 30px;
+    text-align: center;
+}
+
+.table {
+    margin: 20px;
+}
+
+.content {
+    font: 200;
+    margin: 20px;  
+}
+
+.documentation-page pre>code {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    overflow: visible;
+
+}
