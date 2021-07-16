@@ -20,3 +20,21 @@
     overflow: visible;
 
 }
+
+main, footer {
+    margin-left: 215px;
+}
+
+footer{
+width:100%;
+height:100px;
+position:absolute;
+bottom:0px;
+right:0px;
+}
+
+.lpanel {
+    position: absolute;
+    top: 4rem;
+    left: 2px;
+}
