@@ -1,0 +1,5 @@
+<keymap version="1" name="Windows copy" parent="$default">
+  <action id="SearchEverywhere">
+    <keyboard-shortcut first-keystroke="ctrl alt 1" />
+  </action>
+</keymap>
