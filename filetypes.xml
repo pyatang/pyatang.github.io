@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="18">
     <extensionMap>
       <mapping pattern="clientkeystore" type="AUTO_DETECTED" />
+      <mapping ext="bak" type="PLAIN_TEXT" />
       <mapping ext="pfx" type="PLAIN_TEXT" />
       <removed_mapping ext="apk" approved="true" type="APK" />
       <removed_mapping ext="psd" approved="true" type="Image" />
