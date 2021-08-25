@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">         
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Test Data Prepare Example</title>
+    </head>
+
+    <body>
+<h1>授信流程分析</h1>
+
+<div>
+测试数据的准备工程，相当于对整个服务的逆向思考。
+授信过程涉及到的点
+
+<ol>
+<li>获取用户的基本信息，包含姓名、身份证</li>
+<ul>
+<li>用函数生成伪造姓名</li>
+使用mysql 的 procedure存储函数来生成字符串和数字类型的数据
+
+<pre><code>CREATE PROCEDURE testcases.`test-insert`(in len int)
+begin
+	declare x int;
+set x=1;
+	while x<10 do
+	insert into bankcard (age,number) values(x,x);
+set x = x +1;
+	end while;
+select * from bankcard b limit len;
+END</code></pre>
+
+<li>用函数生成伪造手机号</li>
+<li>用函数生成伪造身份证——符合格式，能通过程序校验</li>
+<li>用函数生成伪造银行卡——符合格式，能通过程序校验</li>
+</ul>
+
+直接插入数据库表 passport.user_base
+
+<li>携带用户信息发起请求</li>
+
+<ul>
+<li>明确注册调用的接口</li>
+</ul>
+
+<li>得到请求结果</li>
+<ul>
+<li>对得到的结果断言</li>
+</ul>
+
+</ol>
+
+</div>
+
+    </body>
+
+    
+<a href=../../index.html>回到首页</a>
+</html>
+
