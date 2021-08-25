@@ -1,5 +1,25 @@
 <keymap version="1" name="Windows copy" parent="$default">
+  <action id="BraceOrQuoteOut" />
+  <action id="Diff.FocusOppositePane" />
+  <action id="EditorChooseLookupItemReplace" />
+  <action id="EditorIndentSelection" />
+  <action id="EditorTab" />
+  <action id="ExpandLiveTemplateByTab" />
+  <action id="NextParameter" />
+  <action id="NextTemplateParameter" />
+  <action id="NextTemplateVariable">
+    <keyboard-shortcut first-keystroke="enter" />
+  </action>
+  <action id="RunAnything">
+    <keyboard-shortcut first-keystroke="ctrl tab" />
+  </action>
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="ctrl alt 1" />
+  </action>
+  <action id="SearchEverywhere.CompleteCommand" />
+  <action id="SearchEverywhere.NextTab" />
+  <action id="SplitChooser.NextWindow" />
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="shift ctrl tab" />
   </action>
 </keymap>
