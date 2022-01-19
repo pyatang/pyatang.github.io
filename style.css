@@ -14,6 +14,11 @@
   text-decoration: none;
 }
 
+.lpanel {
+    position: static;
+    top: 4rem;
+    left: 2px;
+}
 
 @media screen and (max-width: 600px) {
 .header {
@@ -52,11 +57,7 @@ bottom:0px;
 right:0px;
 }
 
-.lpanel {
-    position: absolute;
-    top: 4rem;
-    left: 2px;
-}
+
 
 /* 响应式布局 - 小于 600 px 时改为上下布局 */
 @media screen and (max-width: 600px) {
