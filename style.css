@@ -1,6 +1,25 @@
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 600px) {
 .header {
     padding: 30px;
     text-align: center;
+}
 }
 
 .table {
@@ -22,7 +41,7 @@
 }
 
 main, footer {
-    margin-left: 215px;
+    margin-left: auto;
 }
 
 footer{
@@ -37,4 +56,11 @@ right:0px;
     position: absolute;
     top: 4rem;
     left: 2px;
+}
+
+/* 响应式布局 - 小于 600 px 时改为上下布局 */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
