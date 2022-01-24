@@ -1,6 +1,57 @@
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* remove  the underline the links */
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+a:hover {text-decoration:underline;}
+
+/* match nested tags all levels */
+div.abc span.xyz {color:red}
+
+/* Parent Child Relation (Nested Tags (1st level only)) */
+div > span:active {color:blue}
+
+span {
+  background: dimgrey;
+  border: 1px solid black;
+}
+
+
+p:lang(zh) {color:blue;}
+
+p{
+position:static;
+text-align:center ;
+padding:15px;
+}
+
+.istrue:enabled {color:darkgreen}
+
+.lpanel {
+    position: static;
+    top: 4rem;
+    left: 2px;
+}
+
+@media screen and (max-width: 600px) {
 .header {
     padding: 30px;
     text-align: center;
+}
 }
 
 .table {
@@ -18,11 +69,10 @@
     font-size: 20px;
     padding: 10px 15px;
     overflow: visible;
-
 }
 
 main, footer {
-    margin-left: 215px;
+    margin-left: auto;
 }
 
 footer{
@@ -33,8 +83,65 @@ bottom:0px;
 right:0px;
 }
 
-.lpanel {
-    position: absolute;
-    top: 4rem;
-    left: 2px;
+
+
+/* 响应式布局 - 小于 600 px 时改为上下布局 */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
+
+figure {
+text-align:center ;
+	padding: 0;
+	margin: 80px;
+	}
+
+
+div.color69375 {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 6px;
+    margin: 3px;
+    color: black;
+    text-shadow: white 0 0 8px, white 0 0 8px;
+}
+
+h1{
+text-align: center;
+}
+
+#s11{
+     display:flex;
+justify-content: space-around;
+     }
+
+#ft88{
+border:solid blue;
+}
+
+#ft27872 {
+color:red;
+border:solid red
+}
+
+#tran82944
+{
+ position:static;
+ border:solid green;
+ width: 30%;
+ }
+
+#tran82944
+{
+ transition: width 3s;
+ /* when width value changes, do transition, over 2 seconds */
+}
+
+#tran82944:hover
+{
+ width: 100%;
+ /* new width value */
+ }
+
