@@ -37,7 +37,6 @@ p{
 position:static;
 text-align:center ;
 padding:15px;
-border: solid gray;
 }
 
 .istrue:enabled {color:darkgreen}
