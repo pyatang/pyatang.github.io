@@ -17,7 +17,6 @@
 /* remove  the underline the links */
 a:link {text-decoration:none}
 a:visited {text-decoration:none}
-
 a:hover {text-decoration:underline;}
 
 /* match nested tags all levels */
@@ -26,8 +25,24 @@ div.abc span.xyz {color:red}
 /* Parent Child Relation (Nested Tags (1st level only)) */
 div > span:active {color:blue}
 
+span {
+  background: dimgrey;
+  border: 1px solid black;
+}
 
-p:lang(zh) {color:lightblue;}
+body {
+  
+  width: 800px;
+  margin: 0 auto;
+}
+p:lang(zh) {color:blue;}
+
+p{
+position:static;
+text-align:center ;
+padding:15px;
+border: solid gray;
+}
 
 .istrue:enabled {color:darkgreen}
 
@@ -59,7 +74,6 @@ p:lang(zh) {color:lightblue;}
     font-size: 20px;
     padding: 10px 15px;
     overflow: visible;
-
 }
 
 main, footer {
@@ -84,9 +98,10 @@ right:0px;
 }
 
 figure {
-    padding: 0;
-    margin: 80px;
-}
+text-align:center ;
+	padding: 0;
+	margin: 80px;
+	}
 
 
 div.color69375 {
@@ -97,3 +112,41 @@ div.color69375 {
     color: black;
     text-shadow: white 0 0 8px, white 0 0 8px;
 }
+
+h1{
+text-align: center;
+}
+
+#s11{
+     display:flex;
+justify-content: space-around;
+     }
+
+#ft88{
+border:solid blue;
+}
+
+#ft27872 {
+color:red;
+border:solid red
+}
+
+#tran82944
+{
+ position:static;
+ border:solid green;
+ width: 30%;
+ }
+
+#tran82944
+{
+ transition: width 3s;
+ /* when width value changes, do transition, over 2 seconds */
+}
+
+#tran82944:hover
+{
+ width: 100%;
+ /* new width value */
+ }
+
