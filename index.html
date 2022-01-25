@@ -18,20 +18,27 @@
 
 <body>
 
-<main>
+
+
+
+
+
+<div id="page">
+
+<div id="header">
+
+<div class="wrap">
+
 <h1 align=center>Welcome to Longyang's Blog</h1>
-
-<!-- <p> -->
-<!-- 实用的东西，往往从最基础的开始。一点一点的累积，才能在自己的掌控之中。 -->
-<!-- </p> -->
-
-</main>
+</div>				<!-- header -->
+</div>
 
 
+
+<div id="main">
+<div class="wrap">
 <div class="lpanel">
-
 <ul>
-
 <h3><a href=./html/reading/read_list.html>Reading </a></h3>
 <h3><a href=./html/blog/blog_list.html>Blog </a></h3>
 <h3><a href=./html/howto/how-to-structure-web-form.html>Form Structure</a></h3>
@@ -41,71 +48,20 @@
 <h3><a href=./html/language/java.html>Java</a></h3>
 <h3><a href=./html/language/webdev.html>WebDev</a></h3>
 <h3><a href=./html/test/career_requirement.html>Testing</a></h3>
-</div>
 </ul>
+</div>				<!-- lpanel -->
+</div>				<!-- wrap -->
+</div>				<!-- main -->
+
+
+<div id="footer">
+<div class="wrap">
+<p>累积到一定程度<b><i>Aha ! </i></b>的瞬间才会出现</p>
+</div>				<!-- wrap -->
+</div>				<!-- footer -->
+</div>				<!-- page -->
 
 
 </body>
-
-<footer align=center>
-
-<p>累积到一定程度<b><i>Aha ! </i></b>的瞬间才会出现</p>
-
-<script language=JavaScript>
-<!--
-var caution = false
-function setCookie(name, value, expires, path, domain, secure){
-var curCookie = name + "=" + escape(value) +
-((expires) ? "; expires=" + expires.toGMTString() : "") +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-((secure) ? "; secure" : "")
-if (!caution || (name + "=" + escape(value)).length<= 4000)
-document.cookie = curCookie
-else
-if (confirm("Cookie exceeds 4KB and will be cut!"))
-document.cookie = curCookie
-}
-function getCookie(name) {
-var prefix = name + "="
-var cookieStartIndex = document.cookie.indexOf(prefix)
-if (cookieStartIndex == -1)
-return null
-var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+ prefix.length)
-if (cookieEndIndex == -1)
-cookieEndIndex = document.cookie.length
-return unescape(document.cookie.substring(cookieStartIndex +prefix.length, cookieEndIndex))
-}
-function deleteCookie(name, path, domain) {
-if (getCookie(name)) {
-document.cookie = name + "=" +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-"; expires=Thu, 01-Jan-70 00:00:01 GMT"
-}
-}
-function fixDate(date) {
-var base = new Date(0)
-var skew = base.getTime()
-if (skew > 0)
-date.setTime(date.getTime() - skew)
-}
-var now = new Date()
-fixDate(now)
-now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
-var visits = getCookie("counter")
-if (!visits)
-visits = 1
-else
-visits = parseInt(visits) + 1
-setCookie("counter", visits, now)
-document.write("您是第" + visits + "位访问本的！")
-// -->
-</script>
-
-
-</footer>
-
-
 
 </html>

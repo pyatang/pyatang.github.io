@@ -34,11 +34,16 @@ div{
 
 
 #header{
-background:#cccccc;
+/* background:#cccccc; */
 }
 
 #main{
-background:#dddddd;
+/* background:#dddddd; */
+}
+
+#footer{
+/* background:#d3d3d3; */
+text-align:center;
 }
 
 #primary{
@@ -106,9 +111,6 @@ a:hover {text-decoration:underline;}
     overflow: visible;
 }
 
-main, footer {
-    margin-left: auto;
-}
 
 footer{
 width:100%;
