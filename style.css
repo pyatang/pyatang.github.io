@@ -49,6 +49,7 @@ text-align:center;
 #primary{
     max-width: 720px;
     margin: 0 auto;
+    padding: 1em;
 }
 
 #secondary{
