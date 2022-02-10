@@ -193,3 +193,8 @@ border:solid red
  /* new width value */
  }
 
+
+/* img 自适应 */
+img{
+max-width:50%;
+}
