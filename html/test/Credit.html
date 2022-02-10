@@ -27,7 +27,8 @@
 <li>用函数生成伪造姓名</li>
 使用mysql 的 procedure存储函数来生成字符串和数字类型的数据
 
-<pre><code>CREATE PROCEDURE testcases.`test-insert`(in len int)
+<div style="overflow-x:auto;">
+<pre>CREATE PROCEDURE testcases.`test-insert`(in len int)
 begin
 	declare x int;
 set x=1;
@@ -36,7 +37,8 @@ set x=1;
 set x = x +1;
 	end while;
 select * from bankcard b limit len;
-END</code></pre>
+END</pre>
+</div>
 
 <li>用函数生成伪造手机号</li>
 <li>用函数生成伪造身份证——符合格式，能通过程序校验</li>
