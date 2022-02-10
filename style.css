@@ -196,7 +196,13 @@ border:solid red
 
 /* img 自适应 */
 img{
-max-width:100%;
+width:100%;
+}
+
+.box {
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 table{
