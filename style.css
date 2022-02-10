@@ -196,5 +196,9 @@ border:solid red
 
 /* img 自适应 */
 img{
-max-width:50%;
+max-width:100%;
+}
+
+table{
+overflow-x:auto;
 }
