@@ -91,6 +91,7 @@ f_update2();
 // else
 // visits = parseInt(visits) + 1
 // setCookie("counter", visits, now)
-// document.write("您是第" + visits + "位访问本的！")
+/
+/ document.write("您是第" + visits + "位访问本的！")
 // // -->
 // </script>
