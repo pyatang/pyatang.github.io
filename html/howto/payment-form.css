@@ -23,12 +23,17 @@ div+div {
 label span {
     display: inline-block;
     width: 120px;
-    text-align: right;
+    text-align: left;
 }
 
-input, textarea {
+input {
     font: 1em sans-serif;
-    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+textarea {
+    font: 1em sans-serif;
     box-sizing: border-box;
     border: 1px solid #999;
 }
@@ -51,7 +56,6 @@ textarea {
 fieldset {
     width: 250px;
     box-sizing: border-box;
-    margin-left: 136px;
     border: 1px solid #999;
 }
 
