@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <!-- saved from url=(0059)https://ddu1222.github.io/bankcard-validator/bcBuilder.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>民生银行--测试银行卡生成</title>
     <script type="text/javascript" src="./bcBuilder.js"></script>
+<link rel="stylesheet" href="../../style.css"> 
+<div class="topnav">
+<a href=../../index.html>home</a>
+</div>
   </head>
+
   <body>
     <script type="text/javascript">
        function getCards() {
@@ -15,6 +20,18 @@
          document.getElementById("cards").innerHTML = bcBuilder(20, bankType, bankName).join('<br/>')
        }
     </script>
+
+<div id="page">
+<div id="header">
+<div class="wrap">
+<h1 align=center>测试银行卡</h1>
+</div>				<!-- wrap -->
+</div>				<!-- header -->
+
+<div id="main">
+<div class="wrap">
+<div id="primary">
+
     <div>
       <select id="bankType">
         <option value="1">借记卡</option>
@@ -35,5 +52,9 @@
         <div id="cards"></div>
       </fieldset>
     </div>
-  
+</div>				<!-- primary -->
+</div>				<!-- wrap -->
+</div>				<!-- main -->
+</div>			<!-- page -->
+
 </body></html>
