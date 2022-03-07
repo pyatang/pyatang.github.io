@@ -205,3 +205,6 @@ align-items:center;
 justify-content:center;
 }
 
+#reserve_line{
+white-space:pre-wrap;
+}  
