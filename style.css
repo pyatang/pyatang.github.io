@@ -206,5 +206,5 @@ justify-content:center;
 }
 
 #reserve_line{
-white-space:pre;
+white-space:pre-wrap;
 }  
