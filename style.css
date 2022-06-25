@@ -33,6 +33,9 @@ div{
 white-space: normal;
 }
 
+p{
+white-space: pre;
+}
 
 #header{
 /* background:#cccccc; */

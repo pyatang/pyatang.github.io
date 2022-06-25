@@ -22,22 +22,20 @@
 <div id="main">
 <div class="wrap">
 <div id="primary">
-<h4>常用指令</h4>
 
-<pre>
-启动
+
+<article>
+<h4>常用指令</h4>
+<p>
+<b>启动</b>
 /opt/RocketMQ-3.4.6/devenv/bin/mqnamesrv > /tmp/mqnamesrv.log &
 /opt/RocketMQ-3.4.6/devenv/bin/mqbroker -c /opt/RocketMQ-3.4.6/devenv/conf/2m-noslave/broker-a.properties > /tmp/mqbroker.log &
 
-关闭
+<b>关闭</b>
 /opt/RocketMQ-3.4.6/devenv/bin/mqshutdown namesrv
 /opt/RocketMQ-3.4.6/devenv/bin/mqshutdown broker
-</pre>
 
-
-<pre>
-<div>
-<h4>配置详解</h4>
+<b>配置详解</b>
 #所属集群名字 brokerClusterName=rocketmq-cluster
 #broker名字，注意此处不同的配置文件填写的不一样 brokerName=broker-a|broker-b
 #0 表示 Master，>0 表示 Slave brokerId=0
@@ -93,8 +91,8 @@ flushDiskType=ASYNC_FLUSH
 #sendMessageThreadPoolNums=128
 #拉消息线程池数量
 #pullMessageThreadPoolNums=128
-</pre>
-
+</p>
+</article>
 </div>				<!-- primary -->
 
 
