@@ -1,9 +1,0 @@
-<toolSet name="External Tools">
-  <tool name="excel" description="表格" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
-    <exec>
-      <option name="COMMAND" value="D:\Program Files\WPS Office\11.1.0.10578\office6\wps.exe" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="D:/Program Files/WPS Office/11.1.0.10578/office6" />
-    </exec>
-  </tool>
-</toolSet>
