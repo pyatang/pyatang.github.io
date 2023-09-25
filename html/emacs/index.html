@@ -21,11 +21,10 @@
     
 
 <div id="main">
-<div 
-class="wrap">
+<div class="wrap">
 <div id="primary">
 
-<h5>0.配置org-publish-project</h5>
+<b>0.配置org-publish-project</b>
 
 <p>
 先写一个org-to-html 的 lisp 脚本  org-publish.el，如下。<br />
@@ -72,27 +71,26 @@ class="wrap">
 </pre>
 
 
-<h5>1.写org笔记</h5>
+
+<ol>
+<li>写org笔记</li>
 
 <p>
 在目录 e:/org/ 下写*.org 笔记
 </p>
 
-<h5>2.org转html</h5>
-
+<li>org转html</li>
 <p>
 通过 Alt+x  org-publish-project 调用该命令转化成 html 文件
 </p>
-
-<h5>3.推送到github</h5>
+<li>推送到github</li>
 <p>
 在配置的 e:/public_html 仓库路径中，进行 git add   git commit git push 操作
 </p>
-
-
 <p>
 但是，我目前还是直接在html里面写博客，有了xah-lee的 xah-html-mode 脚本，十分方便。
 </p>
+</ol>
 
 
 <hr />
