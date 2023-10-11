@@ -27,25 +27,29 @@
 <div class="wrap">
 <div id="primary">
 
-<a href="../../static/pic/running/20220209185500.jpg">20220209</a>
+<a href="../../static/pic/running/20220209.jpg">20220209</a>
 <br />
-<a href="../../static/pic/running/20220211164114.jpg">20220211</a>
+<a href="../../static/pic/running/20220211.jpg">20220211</a>
 <br />
-<a href="../../static/pic/running/20220217190000.jpg">20220217</a>
+<a href="../../static/pic/running/20220217.jpg">20220217</a>
 <br />
-<a href="../../static/pic/running/20220306151100.jpg">20220306</a>
+<a href="../../static/pic/running/20220306.jpg">20220306</a>
 <br />
-<a href="../../static/pic/running/20220603151100.jpg">20220603</a>
+<a href="../../static/pic/running/20220603.jpg">20220603</a>
 <br />
-<a href="../../static/pic/running/20220605151100.jpg">20220605</a>
+<a href="../../static/pic/running/20220605.jpg">20220605</a>
 <br />
-<a href="../../static/pic/running/20230916101339.jpg">20230916</a>
+<a href="../../static/pic/running/20230916.jpg">20230916</a>
 <br />
-<a href="../../static/pic/running/20230923094034.jpg">20230923</a>
-
+<a href="../../static/pic/running/20230923.jpg">20230923</a>
+<br />
+<a href="../../static/pic/running/20231003.jpg">20231003</a>
+<br />
+<a href="../../static/pic/running/20231005.jpg">20231005</a>
+<br />
 <div class="image-gallery">
   <div class="image-container">
-    <img id="gallery-image" src="../../static/pic/running/20230923094034.jpg" alt="Gallery Image">
+    <img id="gallery-image" src="../../static/pic/running/20231005.jpg" alt="Gallery Image">
   </div>
   <button id="prev-button">Previous</button>
   <button id="next-button">Next</button>
@@ -54,19 +58,21 @@
 
 <script>
 const imageUrls = [
-  "../../static/pic/running/20220209185500.jpg",
-  "../../static/pic/running/20220211164114.jpg",
-  "../../static/pic/running/20220217190000.jpg",
-  "../../static/pic/running/20220306151100.jpg",
-  "../../static/pic/running/20220603151100.jpg",
-  "../../static/pic/running/20220605151100.jpg",
-  "../../static/pic/running/20230916101339.jpg",
-  "../../static/pic/running/20230923094034.jpg",
+  "../../static/pic/running/20220209.jpg",
+  "../../static/pic/running/20220211.jpg",
+  "../../static/pic/running/20220217.jpg",
+  "../../static/pic/running/20220306.jpg",
+  "../../static/pic/running/20220603.jpg",
+  "../../static/pic/running/20220605.jpg",
+  "../../static/pic/running/20230916.jpg",
+  "../../static/pic/running/20230923.jpg",
+  "../../static/pic/running/20231003.jpg",
+  "../../static/pic/running/20231005.jpg",
 
   // Add more image URLs as needed
 ];
 
-let currentImageIndex = 0;
+let currentImageIndex = imageUrls.length - 1;
 const galleryImage = document.getElementById('gallery-image');
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
