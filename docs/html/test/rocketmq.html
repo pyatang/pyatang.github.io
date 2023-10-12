@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" >         
+ <meta name="viewport" content="width=device-width, initial-scale=1"  white-space="normal"/>
+ <title>rocketmq</title>
+<link rel="stylesheet" href="../../style.css"> 
+<div class="topnav">
+<a href=../../index.html>home</a>
+</div>
+</head>
+
+<body>
+<div id="page">
+<div id="header">
+<div class="wrap">
+<h1 align=center>Rocketmq</h1>
+</div>				<!-- wrap -->
+</div>				<!-- header -->
+    
+
+<div id="main">
+<div class="wrap">
+<div id="primary">
+
+
+<article>
+<b>常用指令</b>
+<p>
+<b>启动</b>
+/opt/RocketMQ-3.4.6/devenv/bin/mqnamesrv > /tmp/mqnamesrv.log &
+/opt/RocketMQ-3.4.6/devenv/bin/mqbroker -c /opt/RocketMQ-3.4.6/devenv/conf/2m-noslave/broker-a.properties > /tmp/mqbroker.log &
+
+<b>关闭</b>
+/opt/RocketMQ-3.4.6/devenv/bin/mqshutdown namesrv
+/opt/RocketMQ-3.4.6/devenv/bin/mqshutdown broker
+
+<b>配置详解</b>
+#所属集群名字 brokerClusterName=rocketmq-cluster
+#broker名字，注意此处不同的配置文件填写的不一样 brokerName=broker-a|broker-b
+#0 表示 Master，>0 表示 Slave brokerId=0
+#nameServer地址，分号分割
+namesrvAddr=rocketmq-nameserver1:9876;rocketmq-nameserver2:9876
+#在发送消息时，自动创建服务器不存在的topic，默认创建的队列数
+defaultTopicQueueNums=4
+#是否允许 Broker 自动创建Topic，建议线下开启，线上关闭
+autoCreateTopicEnable=true
+#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+#Broker 对外服务的监听端口
+listenPort=10911
+#删除文件时间点，默认凌晨 4点
+deleteWhen=04
+#文件保留时间，默认 48 小时 fileReservedTime=120
+#commitLog每个文件的大小默认1G mapedFileSizeCommitLog=1073741824
+#ConsumeQueue每个文件默认存30W条，根据业务情况调整 mapedFileSizeConsumeQueue=300000
+#destroyMapedFileIntervalForcibly=120000
+#redeleteHangedFileInterval=120000
+#检测物理文件磁盘空间 diskMaxUsedSpaceRatio=88
+#存储路径
+storePathRootDir=/usr/local/rocketmq/store  （默认在启动用户家目录下）
+#commitLog 存储路径 storePathCommitLog=/usr/local/rocketmq/store/commitlog
+#消费队列存储路径存储路径
+storePathConsumeQueue=/usr/local/rocketmq/store/consumequeue
+#消息索引存储路径
+storePathIndex=/usr/local/rocketmq/store/index
+#checkpoint 文件存储路径
+storeCheckpoint=/usr/local/rocketmq/store/checkpoint
+#abort 文件存储路径
+abortFile=/usr/local/rocketmq/store/abort
+#限制的消息大小 maxMessageSize=65536
+
+#flushCommitLogLeastPages=4
+#flushConsumeQueueLeastPages=2
+#flushCommitLogThoroughInterval=10000
+#flushConsumeQueueThoroughInterval=60000
+
+#Broker 的角色
+#- ASYNC_MASTER 异步复制Master
+#- SYNC_MASTER 同步双写Master
+#- SLAVE
+brokerRole=ASYNC_MASTER
+
+#刷盘方式
+#- ASYNC_FLUSH 异步刷盘
+#- SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH
+
+#checkTransactionMessageEnable=false
+#发消息线程池数量
+#sendMessageThreadPoolNums=128
+#拉消息线程池数量
+#pullMessageThreadPoolNums=128
+</p>
+</article>
+</div>				<!-- primary -->
+
+
+<div id="secondary">
+<div class="widget">
+<div class="lpanel">
+</div>				<!-- lpanel -->
+</div>				<!-- widget -->
+</div>				<!-- secondary -->
+</div>				<!-- wrap -->
+</div>				<!-- main -->
+
+
+</div>				<!-- page -->
+
+</body>
+
+</html>

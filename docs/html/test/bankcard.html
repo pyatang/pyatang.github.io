@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://ddu1222.github.io/bankcard-validator/bcBuilder.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>民生银行--测试银行卡生成</title>
+    <script type="text/javascript" src="./bcBuilder.js"></script>
+<link rel="stylesheet" href="../../style.css"> 
+<div class="topnav">
+<a href=../../index.html>home</a>
+</div>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+       function getCards() {
+         var bankType = document.getElementById("bankType").value || ''
+		 var bankName = document.getElementById("bankName").value || ''
+         console.log('xxxxx', bankType)
+		 console.log('xxxxx', bankName)
+         document.getElementById("cards").innerHTML = bcBuilder(20, bankType, bankName).join('<br/>')
+       }
+    </script>
+
+<div id="page">
+<div id="header">
+<div class="wrap">
+<h1 align=center>测试银行卡</h1>
+</div>				<!-- wrap -->
+</div>				<!-- header -->
+
+<div id="main">
+<div class="wrap">
+<div id="primary">
+<div align=right>
+<a href="https://ddu1222.github.io/bankcard-validator/bcBuilder.html">来自此处</a>
+<br />
+</div>
+
+    <div>
+      <select id="bankType">
+        <option value="1">借记卡</option>
+        <option value="2">贷记卡</option>
+        <option value="3">准贷记卡</option>
+        <option value="4">信用卡</option>
+      </select>
+	  <select id="bankName">
+        <option value="民生银行">民生银行</option>
+        <option value="中国银行">中国银行</option>
+        <option value="建设银行">中国建设银行</option>
+        <option value="工商银行">中国工商银行</option>
+		<option value="农业银行">中国农业银行</option>
+      </select>
+      <button onclick="getCards()">生成20张随机的银行卡号</button>
+      <fieldset>
+        <legend>卡号列表</legend>
+        <div id="cards"></div>
+      </fieldset>
+    </div>
+
+
+</div>				<!-- primary -->
+</div>				<!-- wrap -->
+</div>				<!-- main -->
+</div>			<!-- page -->
+
+</body></html>

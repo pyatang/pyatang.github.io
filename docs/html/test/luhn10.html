@@ -1,0 +1,105 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" >         
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="style.css ">
+<title>模10算法</title>
+<link rel="stylesheet" href="../../style.css"> 
+<div class="topnav">
+<a href=../../index.html>home</a>
+</div>
+</head>
+
+<body>
+<div id="page">
+<div id="header">
+<div class="wrap">
+<h1 align=center>模10算法</h1>
+</div>				<!-- wrap -->
+</div>				<!-- header -->
+
+
+<div id="main">
+<div class="wrap">
+<div id="primary">
+
+
+<h2>1.是什么</h2>
+<div >
+Luhn算法（Luhn algorithm），也称为“模10”（Mod 10）算法，是一种简单的校验和算法，一般用于验证身份识别码，例如发卡行识别码、国际移动设备辨识码（IMEI），美国国家提供商标识号码，或是加拿大社会保险号码。该算法由IBM科学家Hans Peter Luhn创造，专利于1954年1月6日申请，1960年8月23日颁证，美国专利号2950048。
+<a href="https://baike.baidu.com/item/Luhn%E7%AE%97%E6%B3%95/22799984">引用自百度百科</a>
+</div>
+
+
+<h2>2.计算规则</h2>
+<ol>
+<li>从校验位开始，从右往左，偶数位乘2（例如，1*2=2），然后将两位数字的个位与十位相加（例如，16：1+6=7，18：1+8=9）；</li>
+<li>把得到的数字加在一起（本例中得到67）；</li>
+<li>将数字的和取模10（本例中得到7），再用10去减（本例中得到3），得到校验位。</li>
+</ol>
+<div>
+
+<h2>3.应用场景--各类卡号的生成</h2>
+<b>银行卡结构</b>
+<p>
+XXXXXX XXXXXXXXXXXX X 
+发卡行标识代码 自定义位 校验码
+根据类型分为借记卡和信用卡,16位居多
+<a href="https://zhuanlan.zhihu.com/p/21399490">参考知乎问答</a>
+</p>
+
+<h3>实际用途--生成测试银行卡号</h3>
+<p>
+<h4>1.银行卡前缀</h4>
+由各发卡号行指定
+<h4>2.银行卡自定义位</h4>
+由各发卡号指定
+<h4>3.银行卡校验位</h4>
+通过模10规则获得
+</p>
+
+
+<div id="color69375">
+java实现
+</div>
+
+<div style="overflow-x:auto;">
+<pre>
+
+    public static String generateByPrefix(Integer prefix) {
+        Random random = new Random(System.currentTimeMillis());
+        String bardNo = prefix + StringUtils.leftPad(random.nextInt(999999999) + "", 9, "0");
+        char[] chs = bardNo.trim().toCharArray();
+        int luhnSum = LuhnUtils.getLuhnSum(chs);
+        char checkCode = luhnSum % 10 == 0 ? 48 : (char)(10 - luhnSum % 10 + 48);
+        return bardNo + checkCode;
+    }
+
+
+
+    public static int getLuhnSum(char[] chs) {
+        int luhnSum = 0;
+        int i = chs.length - 1;
+
+        for(int j = 0; i >= 0; ++j) {
+            int k = chs[i] - 48;
+            if (j % 2 == 0) {
+                k *= 2;
+                k = k / 10 + k % 10;
+            }
+
+            luhnSum += k;
+            --i;
+        }
+
+        return luhnSum;
+    }
+</pre>
+</div>
+
+</div>
+</p>
+
+</div>				<!-- wrap -->
+</div>				<!-- main -->
+</div>				<!-- page -->
+</body>
+</html>
