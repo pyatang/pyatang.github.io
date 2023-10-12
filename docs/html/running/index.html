@@ -116,6 +116,9 @@ hammer.on('swiperight', () => {
 
 // Initial display
 displayImage(currentImageIndex);
+
+
+
 </script>
 
 </div>				<!-- primary -->
@@ -143,8 +146,46 @@ displayImage(currentImageIndex);
 
 <footer>
 
-<input type="file" id="fileInput" style="display: none;">
-<button id="uploadButton" class="favorite styled" type="button">Upload</button>
+
+    
+<form enctype="multipart/form-data">
+<input type="file" id="file" style="display: none;">
+<button id="uploadButton" class="favorite styled" type="button" onclick="uploadFile()">Upload</button>
+<div id="upload-status"></div>
+    </form>
+
+<script>
+async function uploadFile() {
+            const fileInput = document.querySelector('#file');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file to upload.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const result = await response.text();
+                    document.querySelector('#upload-status').innerHTML = result;
+                } else {
+                    console.error('File upload failed.');
+                }
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        }
+</script>
+
+
+
 </footer>
 
 
