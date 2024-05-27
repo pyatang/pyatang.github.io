@@ -14,6 +14,10 @@
   text-decoration: none;
 }
 
+.error {
+  border: red solid 1px;
+  color: red;
+}
 
 /* =Reset
 -------------------------------------------------------------- */
@@ -77,6 +81,7 @@ padding: 1em;
       margin: 0 auto;
       padding: 1em;
 }
+
 
 .wrap:after{
 content: "";

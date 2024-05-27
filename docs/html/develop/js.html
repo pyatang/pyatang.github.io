@@ -3,64 +3,220 @@
 
 <head>
 
-<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1" /> <link rel="stylesheet" href="../../style.css"/> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../style.css" />
 
-<title>this</title>
-<div class="topnav">
-<a href=../../index.html>home</a>
-</div>
+    <title>this</title>
+    <div class="topnav">
+        <a href=../../index.html>home</a>
+    </div>
 
 </head>
 
 <body>
-
-<div id="main">
-<div class="wrap">
-<div id="s11">
-<div id="ft88">Right Side</div>
-<div id="ft88">Right Side</div>
-<div id="ft88">Right Side</div>
-<div id="ft27872">Left Side</div>
-<div id="ft27872">Left Side</div>
-<div id="ft27872">Left Side</div>
-</div>
-
-<p lang="zh">
-分隔线
-</p>
-
-<div id="tran82944">mouse hover over me</div>
-
-<div>
-<figure>
-<img src="../../assets/pic/js_async_defer_2019-09-24_6hhq9.svg"/>
-</figure>
-</div>
-
-<p>
-In other words, HTML tag represents element, and it becomes node in DOM, and becomes object in JavaScript.
-</p>
-
-<div>
-<figure>
-<img src="../../assets/pic/rendering.svg"/>
-</figure>
-</div>
-
-<p>遭遇到的js问题</p>
-
-<h1>Basic document flow</h1>
-
-<p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
-
-<p>By default we span 100% of the width of our parent element, and we are as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
-
-<p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
 
+    <div id="main">
+        <div class="wrap">
+            <div id="s11">
+                <div id="ft88">Right Side</div>
+                <div id="ft88">Right Side</div>
+                <div id="ft88">Right Side</div>
+                <div id="ft27872">Left Side</div>
+                <div id="ft27872">Left Side</div>
+                <div id="ft27872">Left Side</div>
+            </div>
 
-</div>				<!-- wrap -->
-</div>				<!-- main -->
+            <button :disabled="isBtnDisabled">click me</button>
+            <input v-model.lazy="message" placeholder="edit">
+
+            <p>Message is : {{ message}} </p>
+            <p v-once>Message once is {{message}} </p>
+            <p v-pre>Message once is {{message}} </p>
+
+
+            <textarea v-model="message1" placeholder="edit"> </textarea>
+            <p><span>Multiline message is :</span> {{message1}} </p>
+            <p lang="zh">
+                分隔线
+            </p>
+
+            <input type="radio" id="one" value="1" v-model="picked">
+            <label for="one">One</label>
+
+            <input type="radio" id="two" value="2" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{picked}} </span>
+
+            <br>
+
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+            <label for="mike">Mike</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <input type="checkbox" id="marry" value="Marry" v-model="checkedNames">
+            <label for="marry">Marry</label>
+
+            <br>
+
+            <p>Checked Names: {{ checkedNames }} </p>
+
+            <br>
+            <div>Selected: {{ selected }}</div>
+            <div id="selecct">
+                <select v-model="selected">
+                    <option disabled value="">Please select one</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+            </div>
+            <br>
+            <input type="text" v-model.trim="error" v-bind:class="{'error': error.length > 10}">
+
+            <br>
+            <input type="text" v-model.trim="error" placeholder="请勿超过十个字" :style="errStyle">
+            <p>isValid : {{isValid}} </p>
+            <p>error : {{error}} </p>
+            <button @click="count++">Plus</button>
+            <p>Count: {{count}} </p>
+            <button @click="greet">Greet</button>
+
+            <p><input v-model.number="amount"></p>
+            <p>Count: {{count}} </p>
+            <button @click="plus(amount, $event)">Plus</button>
+
+            <div class="wrap655">
+                <input type="checkbox" v-model="isShow">isShow : {{isShow}}
+                <div v-if="v-show">v-if</div>
+                <div v-show="isShow">v-show</div>
+            </div>
+
+            <button @click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+
+            <br>
+            <br>
+            <a @click.stop="greet">modifier stop</a>
+
+            <br>
+            <form @sumbit.prevent="greet">modifier prevent</form>
+        </div> <!-- wrap -->
+    </div> <!-- main -->
+
+    <script>
+        const { createApp, ref, computed, reactive } = Vue
+
+        createApp({
+            setup() {
+                const message = ref('Hello vue!')
+                const message1 = ref('Hello vue eeee!')
+                const picked = ref(1)
+                const checkedNames = ref([])
+                const selected = ref('')
+                const error = ref('')
+                var count = ref(0)
+                const amount = ref(0)
+                const name = ref('Vue.js')
+                const isShow = ref(true)
+
+
+                function greet(event) {
+                    alert(`Hello ${name.value}!`)
+                    // `event` is the native DOM event
+                    if (event) {
+                        alert(event.target.tagName)
+                    }
+                }
+
+                function plus(amount, event) {
+                    console.log(event.target.tagName);
+                    count+= amount;
+                }
+
+                function warn(message , event){
+                    if(event) {
+                        event.preventDefault()
+                    }
+                    alert(message)
+                }
+
+
+                const isValid = computed(() => {
+                    return error.value.length <= 10
+
+                })
+                const errStyle = computed(() => {
+                    return {
+                        'border': isValid.value ? '' : 'red solid 1px',
+                        'color': isValid.value ? '' : 'red'
+                    }
+                })
+
+
+                return {
+                    isBtnDisabled: true,
+                    message,
+                    message1,
+                    picked,
+                    checkedNames,
+                    selected,
+                    error,
+                    isValid,
+                    errStyle,
+                    count,
+                    amount,
+                    isShow,
+                    greet,
+                    warn,
+
+
+                }
+
+            }
+        }).mount('#main')
+    </script>
+
+
+    <div id="tran82944">mouse hover over me</div>
+
+    <div>
+        <figure>
+            <img src="../../assets/pic/js_async_defer_2019-09-24_6hhq9.svg" />
+        </figure>
+        <p hidden="true">
+            In other words, HTML tag represents element, and it becomes node in DOM, and becomes object in
+            JavaScript.
+        </p>
+    </div>
+
+
+
+    <div>
+        <figure>
+            <img src="../../assets/pic/rendering.svg" />
+        </figure>
+    </div>
+
+    <p>vue 框架学习，尝试用轻前端的方式应用在此页面</p>
+
+    <p></p>
+
+    <h1>Basic document flow</h1>
+
+    <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+    <p>By default we span 100% of the width of our parent element, and we are as tall as our child content. Our
+        total width and height is our content + padding + border width/height.</p>
+
+    <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of
+        our margins, not both.</p>
+
+
 
 
 </body>
