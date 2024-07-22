@@ -108,23 +108,7 @@ nextButton.addEventListener('click', () => {
   }
 });
 
-// Initialize Hammer.js on the touch area
-const hammer = new Hammer(touchArea);
 
-// Add swipe event listeners for left and right swipes
-hammer.on('swipeleft', () => {
-  if (currentImageIndex < imageUrls.length - 1) {
-    currentImageIndex++;
-    displayImage(currentImageIndex);
-  }
-});
-
-hammer.on('swiperight', () => {
-  if (currentImageIndex > 0) {
-    currentImageIndex--;
-    displayImage(currentImageIndex);
-  }
-});
 
 // Initial display
 displayImage(currentImageIndex);
@@ -156,49 +140,6 @@ displayImage(currentImageIndex);
 
 </body>
 
-<footer>
-
-
-    
-<form enctype="multipart/form-data">
-<input type="file" id="file" style="display: none;">
-<button id="uploadButton" class="favorite styled" type="button" onclick="uploadFile()">Upload</button>
-<div id="upload-status"></div>
-    </form>
-
-<script>
-async function uploadFile() {
-            const fileInput = document.querySelector('#file');
-            const file = fileInput.files[0];
-            if (!file) {
-                alert('Please select a file to upload.');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('file', file);
-
-            try {
-                const response = await fetch('/upload', {
-                    method: 'POST',
-                    body: formData,
-                });
-
-                if (response.ok) {
-                    const result = await response.text();
-                    document.querySelector('#upload-status').innerHTML = result;
-                } else {
-                    console.error('File upload failed.');
-                }
-            } catch (error) {
-                console.error('An error occurred:', error);
-            }
-        }
-</script>
-
-
-
-</footer>
 
 
 </html>
