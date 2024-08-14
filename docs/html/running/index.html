@@ -27,7 +27,17 @@
 <div class="wrap">
 <div id="primary">
 
-<a href="../../assets/pic/running/20220209.jpg">20220209</a>
+<div class="image-gallery">
+  <div class="image-container">
+    <img id="gallery-image" src="../../assets/pic/running/20240803.jpg" alt="Gallery Image">
+  </div>
+  <button id="prev-button">Previous</button>
+  <button id="next-button">Next</button>
+  <div id=h"touch-area"></div> <!-- For touch gestures -->
+</div>
+
+<div id="runhref">
+<a href="../../assets/pic/running/20220209.jpg" onclick="return ;">20220209</a>
 <br />
 <a href="../../assets/pic/running/20220211.jpg">20220211</a>
 <br />
@@ -53,17 +63,13 @@
 <br />
 <a href="../../assets/pic/running/20240519.jpg">20240519</a>
 <br />
-<a href="../../assets/pic/running/20240519.jpg">20240610</a>
+<a href="../../assets/pic/running/20240610.jpg">20240610</a>
 <br />
-
-<div class="image-gallery">
-  <div class="image-container">
-    <img id="gallery-image" src="../../assets/pic/running/20240610.jpg" alt="Gallery Image">
-  </div>
-  <button id="prev-button">Previous</button>
-  <button id="next-button">Next</button>
-  <div id="touch-area"></div> <!-- For touch gestures -->
+<a href="../../assets/pic/running/20240803.jpg">20240803</a>
+<br />
 </div>
+
+
 
 <script>
 const imageUrls = [
@@ -81,6 +87,7 @@ const imageUrls = [
 "../../assets/pic/running/20231022.jpg",
 "../../assets/pic/running/20240519.jpg",
 "../../assets/pic/running/20240610.jpg",
+"../../assets/pic/running/20240803.jpg",
   // Add more image URLs as needed
 ];
 
@@ -89,6 +96,7 @@ const galleryImage = document.getElementById('gallery-image');
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
 const touchArea = document.getElementById('touch-area');
+
 
 function displayImage(index) {
   galleryImage.src = imageUrls[index];
